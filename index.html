@@ -6,7 +6,8 @@
     <title>Wordly - Interactive Dictionary</title>
     <!-- Tailwind CSS CDN for modern, clean and responsive layout out-of-the-box -->
      <script src="https://cdn.tailwindcss.com"></script>
-     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
     <header>
@@ -22,34 +23,39 @@
                 <input 
                 type="text" 
                 id="search-input"
+                name="word"
                  placeholder="Enter a word..."
+                 autocomplete="off"
                   required>
-                <button type="submit">Search</button>
+                <button 
+                type="submit"
+                id="search-btn">
+                Search
+            </button>
             </form>
+        <!-- Loading message-->
+            <div id="loading" class="loading hidden">
+                <p>Loading...</p>
+            </div>
     </section>
-
         <!-- Error Message-->
     <section>
-         <div id="errorMessage" class="error-message hidden">
+         <div
+          id="errorMessage" 
+          class="error-message hidden"
+          role ="alert"
+          aria-live="assertive"
+          >
         </div>
 
         <!-- Results Section -->
         <div id="results" class="results-section hidden">
-            <h2 id="word"> Word will appear here</h2>
-        <!-- Favorite Button -->
-        <section class="favorite-section">
-            <button id="favorite-btn">Add to Favorites</button>
-            <h3>Favorites:</h3>
-            <ul id="favorite-list">
-                <!-- Favorite words will be dynamically added here -->
-            </ul>
-        </section>
+            <h2 id="word"></h2>
         <!-- Pronunciation-->
         <div id="pronunciation" class="pronunciation-section">
             <h3>Pronunciation:</h3>
-            <p id="phonetic">Phonetic will appear here</p>
+            <p id="phonetic"></p>
             <audio id="audio" controls>
-                <source id="audio-source" src="" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -57,9 +63,9 @@
         <!--Definition-->
        <div id="definition" class="definition-section">
             <h3>Definition:</h3>
-            <p id="partOfSpeech">Part of speech will appear here</p>
-            <p id="definition-text">Definition will appear here</p>
-            <p id="example">Example will appear here</p>
+            <p id="partOfSpeech"></p>
+            <div id="definition-text"></div>
+            <p id="example"></p>
         </div>
         <!-- Synonyms-->
         <div id="synonyms" class="synonyms-section">
@@ -68,13 +74,31 @@
                 <!-- Synonyms will be dynamically added here -->                 
         </ul>
         </div>
-        
-     </div>
+        <!-- source-->
+        <div id="source-section" class="source-section hidden">
+            <h3>Source:</h3>
+            <a 
+            id="source-link"
+            href=""
+            target="_blank"
+            rel="noopener noreferrer">
+            View Dictionaty Source
+        </a>
+        </div> <!-- end source section -->
+    </div><!--  End results-->
+ <!-- Favorite Button -->
+        <section class="favorite-section">
+            <button id="favorite-btn">Add to Favorites</button>
+            <h3>Favorites:</h3>
+            <ul id="favorite-list">
+                <!-- Favorite words will be dynamically added here -->
+            </ul>
+        </section>
   </section>     
  </main>
 <footer>
-    <p>&copy; 2026 Word Dictionary. All rights reserved.</p>
+    <p>&copy; 2026 Peris Wamweu. All rights reserved.</p>
 </footer>
-<script src="script.js"></script>
+<script src="./js/index.js" defer></script>
 </body>
 </html>

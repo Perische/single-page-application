@@ -76,7 +76,11 @@ button {
 button:hover {
     background-color: #555555;
 }
-
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 /* Results section styles */
 .results-section {
     margin-top: 20px;
@@ -87,17 +91,17 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-results-section h2 {
+.results-section h2 {
     margin-bottom: 10px;
 }
-results-section ul {
+.results-section ul {
     list-style-type: none;
 }
-results-section li {
+.results-section li {
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
-results-section li:last-child {
+.results-section li:last-child {
     border-bottom: none;
 }
 
