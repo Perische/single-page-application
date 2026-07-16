@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordly - Interactive Dictionary</title>
+    <!-- Tailwind CSS CDN for modern, clean and responsive layout out-of-the-box -->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Word Dictionary</h1>
+        <p>search for words and discover examples, and synonyms</p>
+    </header>
+
+    <main>
+        <!-- search section -->
+    <section class="search-section">
+            <form id="search-form">
+              <label for="search-input">Search for a word:</label>  
+                <input 
+                type="text" 
+                id="search-input"
+                 placeholder="Enter a word..."
+                  required>
+                <button type="submit">Search</button>
+            </form>
+    </section>
+
+        <!-- Error Message-->
+    <section>
+         <div id="errorMessage" class="error-message hidden">
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section hidden">
+            <h2 id="word"> Word will appear here</h2>
+        <!-- Favorite Button -->
+        <section class="favorite-section">
+            <button id="favorite-btn">Add to Favorites</button>
+            <h3>Favorites:</h3>
+            <ul id="favorite-list">
+                <!-- Favorite words will be dynamically added here -->
+            </ul>
+        </section>
+        <!-- Pronunciation-->
+        <div id="pronunciation" class="pronunciation-section">
+            <h3>Pronunciation:</h3>
+            <p id="phonetic">Phonetic will appear here</p>
+            <audio id="audio" controls>
+                <source id="audio-source" src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <!--Definition-->
+       <div id="definition" class="definition-section">
+            <h3>Definition:</h3>
+            <p id="partOfSpeech">Part of speech will appear here</p>
+            <p id="definition-text">Definition will appear here</p>
+            <p id="example">Example will appear here</p>
+        </div>
+        <!-- Synonyms-->
+        <div id="synonyms" class="synonyms-section">
+            <h3>Synonyms:</h3>
+            <ul id="synonyms-list">
+                <!-- Synonyms will be dynamically added here -->                 
+        </ul>
+        </div>
+        
+     </div>
+  </section>     
+ </main>
+<footer>
+    <p>&copy; 2026 Word Dictionary. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
