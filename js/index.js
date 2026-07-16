@@ -34,6 +34,7 @@ form.addEventListener('submit', function (event) {
     const word = wordInput.value.trim(); // Get the input value and trim whitespace
     
     if (word === '') {
+        clearDisplay();
         errorMessage.textContent = 'Please enter a word.';
         return;
     }
@@ -207,6 +208,7 @@ function displayFavorites() {
 
 // Add current word to favorites
 favoriteBtn.addEventListener('click', () => {
+
     const currentWord = wordDisplay.textContent.trim();
     // check if current already exists (case-insensitive)
     const alreadyExists = favorite.some((fav) => fav.toLowerCase() === currentWord.toLowerCase());
@@ -231,18 +233,18 @@ function updateFavoriteButton() {
      if (!currentWord || currentWord === "loading..." || currentWord ===''){
         favoriteBtn.textContent = "Add to Favorites";
         favoriteBtn.classList.remove("saved");
+        return;
      }
-    const saved = favorite.some((fav) => fav.toLowerCase() === currentWord)
-    if (saved) {
-
-        favoriteBtn.textContent = "Saved";
+    const saved = favorite.some((fav) => fav.toLowerCase() === currentWord);
+    
+    if (saved) {    
+     favoriteBtn.textContent = "Saved";
         favoriteBtn.classList.add("saved");
 
     } else {
 
         favoriteBtn.textContent = "Add to Favorites";
         favoriteBtn.classList.remove("saved");
-        return;
     }
 
 }
