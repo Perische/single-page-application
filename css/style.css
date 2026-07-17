@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ef9ef5;
-    color: #0c10f9;
+    color: #010103;
     line-height: 1.6;
     padding: 20px;
    
@@ -41,6 +41,45 @@ main {
     border-radius: 5px;
 }
 
+#favorite-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    background-color: #ef9ef5;
+}
+
+/* Flexbox alignment to stop the stair-stepping */
+#favorite-li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background-color: rgba(255, 255, 255, 0.5); /* Subtle card background */
+    border-radius: 6px;
+}
+/* Style the clickable word */
+#favorite-list li span {
+    cursor: pointer;
+    color: #2563eb; /* Blue text */
+    text-decoration: underline;
+    font-weight: 500;
+}
+/* Style the remove button */
+#favorite-list li button {
+    padding: 4px 8px;
+    font-size: 12px;
+    background-color: transparent;
+    color: #230101; /* Soft red text */
+    border: 1px solid #fca5a5; /* Soft red border */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+/* Clean hover state handled natively in CSS */
+#favorite-list li button:hover {
+    background-color: #fef2f2;
+}
 /*search bar styles*/
 .search-bar {
     display: flex;
@@ -115,7 +154,7 @@ h3 {
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(6, 2, 22, 0.1);
 }
 
 #favorite-btn {
@@ -129,12 +168,6 @@ h3 {
 
 #favorite-btn:hover {
     background-color: #555555;
-}
-
-#favorite-list {
-    list-style-type: none;
-    padding-left: 0;
-    background-color: #ef9ef5;
 }
 
 /*error message styles*/
