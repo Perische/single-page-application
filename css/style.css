@@ -1,219 +1,473 @@
-/* General page styles */
-*{
-    box-sizing: border-box;
+/* ===============================
+   Global Reset
+================================ */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+
+/* ===============================
+   Body
+================================ */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ef9ef5;
-    color: #010103;
-    line-height: 1.6;
-    padding: 20px;
-   
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #ef9ef5;
+
+    color: #0c10f9;
+
+    padding: 30px;
+
 }
 
-/* Header styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
- 
-header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-}
+/* ===============================
+   Main Container
+================================ */
 
-/*main container styles*/
-main {
+.container {
+
     max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+
+    margin: auto;
+
 }
 
-#favorite-list {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
-    background-color: #ef9ef5;
+
+/* ===============================
+   Headings
+================================ */
+
+h1 {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    font-size: 2.5rem;
+
 }
 
-/* Flexbox alignment to stop the stair-stepping */
-#favorite-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    margin-bottom: 6px;
-    background-color: rgba(255, 255, 255, 0.5); /* Subtle card background */
-    border-radius: 6px;
-}
-/* Style the clickable word */
-#favorite-list li span {
-    cursor: pointer;
-    color: #2563eb; /* Blue text */
-    text-decoration: underline;
-    font-weight: 500;
-}
-/* Style the remove button */
-#favorite-list li button {
-    padding: 4px 8px;
-    font-size: 12px;
-    background-color: transparent;
-    color: #230101; /* Soft red text */
-    border: 1px solid #fca5a5; /* Soft red border */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-/* Clean hover state handled natively in CSS */
-#favorite-list li button:hover {
-    background-color: #fef2f2;
-}
-/*search bar styles*/
-.search-bar {
-    display: flex;
-    margin-bottom: 20px;
+
+h2 {
+
+    margin-bottom: 15px;
+
 }
 
-form {
+
+/* ===============================
+   Search Section
+================================ */
+
+.search-container {
+
     display: flex;
+
     gap: 10px;
-    flex-direction: column;
+
+    margin-bottom: 25px;
+
 }
 
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
+
+#search-input {
+
+    flex: 1;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    border: 2px solid #ffffff;
+
+    font-size: 1rem;
+
+    outline: none;
+
 }
 
-input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
+
+#search-input:focus {
+
+    border-color: #2563eb;
+
 }
+
+
 
 button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
+
+    padding: 12px 18px;
+
     border: none;
-    border-radius: 5px;
+
+    border-radius: 8px;
+
     cursor: pointer;
+
+    font-size: 1rem;
+
+    background: #2563eb;
+
+    color: white;
+
 }
+
+
 button:hover {
-    background-color: #555555;
+
+    opacity: 0.9;
+
 }
+
+
 button:disabled {
-    background-color: #999;
+
     cursor: not-allowed;
-    opacity: 0.5;
-}
-/* Results section styles */
-.results-section {
-    margin-top: 20px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 5px;
 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.6;
+
 }
 
-.results-section h2 {
-    margin-bottom: 10px;
-}
-.results-section ul {
-    list-style-type: none;
-}
-.results-section li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-.results-section li:last-child {
-    border-bottom: none;
-}
 
-h3 {
-    margin-top: 20px;
-    font-size: 1.5em;
-}
+/* ===============================
+   Loading
+================================ */
 
-.favorite-section {
-    margin-top: 20px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(6, 2, 22, 0.1);
-}
+.loading {
 
-#favorite-btn {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#favorite-btn:hover {
-    background-color: #555555;
-}
-
-/*error message styles*/
-.error-message {
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/*Audio player styles*/
-audio {
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* synonyms */
-#synonyms-list {
-    list-style-type: square;
-    padding-left: 10%;
-}
-
-/* footer */
-footer {
     text-align: center;
+
+    font-size: 1.2rem;
+
+    margin: 20px;
+
+}
+
+
+
+/* ===============================
+   Error Message
+================================ */
+
+.error-message {
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* ===============================
+   Results Card
+================================ */
+
+.results-section {
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
     margin-top: 20px;
-    font-size: 0.9em;
-    color: #666;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.15);
+
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
-    main {
-        padding: 10px;
-    }
 
-    header h1 {
-        font-size: 2em;
-    }
-    header p {
-        font-size: 1em;
-    }
-    button {
-        width: 100%;
-    }
+
+/* ===============================
+   Word
+================================ */
+
+#word {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
 }
+
+
+
+/* ===============================
+   Audio
+================================ */
+
+audio {
+
+    width: 100%;
+
+    margin: 15px 0;
+
+}
+
+
+
+/* ===============================
+   Information Sections
+================================ */
+
+.results-section section {
+
+    margin-bottom: 25px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+.results-section section:last-child {
+
+    border-bottom: none;
+
+}
+
+
+
+/* ===============================
+   Definitions
+================================ */
+
+#definition-text p {
+
+    margin-bottom: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* ===============================
+   Example
+================================ */
+
+#example {
+
+    font-style: italic;
+
+    padding: 10px;
+
+    background: #f3f4f6;
+
+    border-radius: 8px;
+
+}
+
+
+
+/* ===============================
+   Synonyms
+================================ */
+
+#synonyms-list {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+
+#synonyms-list li {
+
+    background: #e0e7ff;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+}
+
+
+
+/* ===============================
+   Clickable Words
+================================ */
+
+.clickable-word {
+
+    cursor: pointer;
+
+    color: #2563eb;
+
+    text-decoration: underline;
+
+}
+
+
+
+/* ===============================
+   Source Link
+================================ */
+
+#source-section a {
+
+    color: #2563eb;
+
+    word-break: break-word;
+
+}
+
+
+
+/* ===============================
+   Favorites
+================================ */
+
+.favorites-container {
+
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.15);
+
+}
+
+
+
+#favorite-list {
+
+    list-style: none;
+
+    margin-top: 15px;
+
+}
+
+
+
+#favorite-list li {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    background: #f9fafb;
+
+    border-radius: 8px;
+
+}
+
+
+
+#favorite-list button {
+
+    background: #dc2626;
+
+    padding: 7px 12px;
+
+}
+
+
+
+/* ===============================
+   Favorite Button Saved State
+================================ */
+
+#favorite-btn.saved {
+
+    background: #16a34a;
+
+}
+
+
+
+/* ===============================
+   Hidden Utility Class
+================================ */
 
 .hidden {
+
     display: none;
+
+}
+
+
+
+/* ===============================
+   Responsive Design
+================================ */
+
+@media (max-width: 600px) {
+
+
+    body {
+
+        padding: 15px;
+
+    }
+
+
+    .search-container {
+
+        flex-direction: column;
+
+    }
+
+
+    button {
+
+        width: 100%;
+
+    }
+
+
+    .results-section {
+
+        padding: 18px;
+
+    }
+
+
+    #word {
+
+        font-size: 1.7rem;
+
+    }
+
+
 }
